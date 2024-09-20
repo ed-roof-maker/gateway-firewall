@@ -40,8 +40,46 @@ Navigate to LuCI > Network > Firewall > IP Sets
 Use the gui to configure the firewall to point ipsets to the /etc/luci-uploads/dropcidr4.txt and dropcidr6.txt files.
 Now modify the firewall to drop based on the loaded ipset.
 
-## Install Linux Unbound DNS Block List
+The ipset fw4 config located here /etc/config/firewall and should look like below -
+```
+config ipset                                             
+        option name 'dropcidr4'                          
+        option comment 'IPv4 country blocks RU CN KP'    
+        option family 'ipv4'                             
+        option loadfile '/etc/luci-uploads/dropcidr4.txt'
+        list match 'dest_net'                            
+        option storage 'list'                            
+                                                         
+config ipset                                             
+        option name 'dropcidr6'                          
+        option comment 'IPv6 country blocks RU CN KP'    
+        option family 'ipv6'                             
+        option loadfile '/etc/luci-uploads/dropcidr6.txt'
+        list match 'dest_net'                            
+        option storage 'list' 
+```
 
+The fw4 zone drop settings are located here /etc/config/firewall and should look like below -
+```
+config rule                                              
+        option ipset 'dropcidr4'                         
+        option target 'DROP'                             
+        option name 'Drop-Country-IPv4'                  
+        option family 'ipv4'                             
+        option dest 'wan'                                
+        option src '*'                                   
+                                                         
+config rule                                              
+        option ipset 'dropcidr6'                         
+        option target 'DROP'                             
+        option name 'Drop-Country-IPv6'                  
+        option family 'ipv6'                             
+        option dest 'wan'                                
+        option src '*'                                   
+```
+
+## Install Linux Unbound DNS Block List
+WIP
 
 
 
