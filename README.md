@@ -117,21 +117,21 @@ Generate unbound hosts files -
 ```
 bash gen-unbound-hosts.sh
 ```
-## Install in Linux Hosts
+### Install in Linux Hosts
 ```
 cp -f dist/hosts /etc/
 ```
-## Install in Windows Hosts
+### Install in Windows Hosts
 ```
 %SystemRoot%\system32\drivers\etc\hosts
 ```
 
-## Install in MACOS
+### Install in MACOS
 ```
 cp -f dist/hosts /private/etc
 ```
 
-## Install in Open WRT DNS Masq
+### Install in Open WRT DNS Masq
 ```
 cd /etc
 wget https://github.com/ed-roof-maker/gateway-firewall/raw/refs/heads/main/dns/dist/hosts
