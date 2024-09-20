@@ -92,10 +92,31 @@ https://www.tmall.com/
 N/A
 
 ## Install Linux Unbound DNS Block List
-WIP
+A block list suitable for residential networks.
+Includes openphish and phish tank domains.
 
+Configure your whitelists.
+```
+vim whitelist
+```
 
+Update anti phishing dbs
+```
+cd db_openphish
+wget https://openphish.com/feed.txt
+cd db_phishtank
+wget http://data.phishtank.com/data/online-valid.csv
+```
 
+Generate hosts file -
+```
+bash gen-hosts.sh
+```
+
+Generate unbound hosts files -
+```
+bash gen-unbound-hosts.sh
+```
 
 
 
