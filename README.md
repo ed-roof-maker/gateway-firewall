@@ -77,6 +77,19 @@ config rule
         option dest 'wan'                                
         option src '*'                                   
 ```
+## Test the Firewall
+### Tests that Work for Russia
+https://cbr.ru/eng/
+https://yandex.com/
+### Tests that Work for China
+https://www.qq.com/
+https://www.sohu.com/
+https://www.boc.cn/en/index.html
+### Tests that Fail for China
+https://www.baidu.com/
+https://www.tmall.com/
+### Tests that Work for North Korea
+N/A
 
 ## Install Linux Unbound DNS Block List
 WIP
