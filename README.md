@@ -91,10 +91,10 @@ https://www.tmall.com/
 ### Tests that Work for North Korea
 N/A
 
-## Install Linux Unbound DNS Block List
+## Install Linux DNS Block List
 A block list suitable for residential networks.
 Includes openphish and phish tank domains.
-
+### Generate Block Lists
 Configure your whitelists.
 ```
 vim whitelist
@@ -117,6 +117,26 @@ Generate unbound hosts files -
 ```
 bash gen-unbound-hosts.sh
 ```
+## Install in Linux Hosts
+```
+cp -f dist/hosts /etc/
+```
+## Install in Windows Hosts
+```
+%SystemRoot%\system32\drivers\etc\hosts
+```
 
+## Install in MACOS
+```
+cp -f dist/hosts /private/etc
+```
+
+## Install in Open WRT DNS Masq
+```
+cd /etc
+wget https://github.com/ed-roof-maker/gateway-firewall/raw/refs/heads/main/dns/dist/hosts
+```
+
+Restart the dnsmasq service.
 
 
