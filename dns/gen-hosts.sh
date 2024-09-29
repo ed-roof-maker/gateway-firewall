@@ -7,7 +7,7 @@ cwdf=$(realpath $0)
 cwdd=$(dirname ${cwdf})
 TMP=/tmp
 OP=${cwdd}/db_openphish/feed.txt
-PT=${cwdd}/db_phishtank/verified_online.csv
+PT=${cwdd}/db_phishtank/online-valid.csv
 
 if [ ! -d ${cwdd}/hosts ]
 then
@@ -25,7 +25,8 @@ rm ${TMP}/OP.txt ${TMP}/PT.txt
 sed -i 's|^|0.0.0.0 |g' ${cwdd}/blacklist
 cp -f ${cwdd}/blacklist ${cwdd}/hosts/
 
-python3 ${cwdd}/hosts/updateHostsFile.py
+cd ${cwdd}/hosts
+python3 updateHostsFile.py --auto --extensions fakenews gambling porn
 
 cp -f ${cwdd}/hosts/hosts ${cwdd}/dist
 
