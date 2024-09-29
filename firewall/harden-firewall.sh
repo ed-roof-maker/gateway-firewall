@@ -17,9 +17,7 @@ rm ${TMP}/list-ipv6.ipset ${TMP}/list-ipv4.ipset
 
 cd ${TMP}
 wget ${CNv4}
-cd ${TMP}
 wget ${RUv4}
-cd ${TMP}
 wget ${KPv4}
 cat ${TMP}/cn.zone ${TMP}/ru.zone ${TMP}/kp.zone > ${cwdd}/dist/dropcidr4.txt
 sed -i 's|^|add list-ipv4 |g' ${TMP}/kp.zone
@@ -30,7 +28,6 @@ rm ${TMP}/cn.zone ${TMP}/ru.zone ${TMP}/kp.zone
 
 cd ${TMP}
 wget ${RUv6}
-cd ${TMP}
 wget ${CNv6}
 cat ${TMP}/cn.zone ${TMP}/ru.zone > ${cwdd}/dist/dropcidr6.txt
 sed -i 's|^|add list-ipv6 |g' ${TMP}/cn.zone
