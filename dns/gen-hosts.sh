@@ -26,7 +26,7 @@ sed -i 's|^|0.0.0.0 |g' ${cwdd}/blacklist
 cp -f ${cwdd}/blacklist ${cwdd}/hosts/
 
 cd ${cwdd}/hosts
-python3 updateHostsFile.py --auto --extensions fakenews gambling porn
+python3 updateHostsFile.py --auto --extensions fakenews gambling
 
 cp -f ${cwdd}/hosts/hosts ${cwdd}/dist
 
