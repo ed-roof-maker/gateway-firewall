@@ -110,6 +110,8 @@ wget http://data.phishtank.com/data/online-valid.csv
 
 Generate hosts file -
 ```
+cd dns
+pip3 install -r requirements.txt
 bash gen-hosts.sh
 ```
 
