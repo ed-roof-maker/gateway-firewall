@@ -12,6 +12,7 @@ PT=${cwdd}/db_phishtank/online-valid.csv
 if [ ! -d ${cwdd}/hosts ]
 then
 	git clone https://github.com/StevenBlack/hosts.git
+	pip3 install -r hosts/requirements.txt
 fi
 
 cp -f ${cwdd}/whitelist ${cwdd}/hosts/
